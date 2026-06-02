@@ -35,7 +35,7 @@ jobs:
 
       # 4. Запуск тестов
       - name: Run tests
-        run: pytest tests --alluredir=allure-results
+        run: pytest --alluredir=allure-results
 
       # 5. Установка Allure CLI
       - name: Install Allure commandline
