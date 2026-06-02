@@ -3,8 +3,12 @@ import logging
 import os
 from config import BASE_URL
 from api_client.booker_client import BookerClient
-
-from data.test_data import AUTH_CREDENTIALS, CREATE_BOOKING_DATA
+from data.test_data import (
+    AUTH_CREDENTIALS,
+    AUTH_WRONG_PASSWORD,
+    AUTH_FAKE_USER,
+    CREATE_BOOKING_DATA
+)
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_logging():
@@ -19,13 +23,21 @@ def setup_logging():
     )
 
 @pytest.fixture(scope="session")
+def api_client():
+    return BookerClient(base_url=BASE_URL)
+
+@pytest.fixture(scope="session")
 def auth_credentials():
     return AUTH_CREDENTIALS
 
 @pytest.fixture(scope="session")
-def create_booking_data():
-    return CREATE_BOOKING_DATA
+def auth_wrong_password():
+    return AUTH_WRONG_PASSWORD
 
 @pytest.fixture(scope="session")
-def api_client():
-    return BookerClient(base_url=BASE_URL)
+def auth_fake_user():
+    return AUTH_FAKE_USER
+
+@pytest.fixture(scope="session")
+def create_booking_data():
+    return CREATE_BOOKING_DATA
