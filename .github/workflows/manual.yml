@@ -30,8 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest allure-pytest playwright jsonschema
-          playwright install
+          pip install -r requirements.txt
 
       # 4. Запуск тестов
       - name: Run tests
