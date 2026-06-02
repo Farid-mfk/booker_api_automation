@@ -3,6 +3,16 @@ AUTH_CREDENTIALS = {
     "password": "password123"
 }
 
+AUTH_WRONG_PASSWORD = {
+    "username": "admin",
+    "password": "wrongpass"
+}
+
+AUTH_FAKE_USER = {
+    "username": "fakeuser",
+    "password": "password123"
+}
+
 CREATE_BOOKING_DATA = {
     "firstname": "John",
     "lastname": "Doe",
